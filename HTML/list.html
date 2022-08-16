@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--列表标签-->
+<!--无序列表<ul><li>  li是列表项，li必须包裹在ul里面-->
+<ul>
+    <li>列表1</li>
+    <li>列表2</li>
+</ul>
+<!--type="属性值" disc 实心原点 默认,square 实心方点, circle 空心圆， li也有type属性-->
+<ul type="circle">
+    <li>空心圆</li>
+</ul>
+<ul type="square">
+    <li>实心方点</li>
+</ul>
+<!--列表嵌套  ul下面只能是li，但是li里面什么都能放-->
+<ul>
+    <li>北京市 <br>
+        <ul type="circle">
+            <li>海淀区</li>
+            <li>朝阳区</li>
+            <li>东城区</li>
+        </ul>
+    </li>
+    <li>广州市 <br>
+        <ul type="circle">
+            <li>天河区</li>
+            <li>越秀区</li>
+        </ul>
+    </li>
+</ul>
+
+<!--有序列表 ol-->
+<ol>
+    <li>呵呵哒1</li>
+    <li>呵呵哒2</li>
+    <li>呵呵哒3</li>
+</ol>
+<!--type="属性值" 1 阿拉伯数字，默认  a A i Ⅰ start属性，标志从几开始-->
+<ol type="a" start="3">
+    <li>嘿嘿</li>
+</ol>
+<!--其实可以直接用ul来表示顺序-->
+<ul>
+    <li>1.小苹果</li>
+    <li>2.月亮之上</li>
+</ul>
+
+<!--定义列表 作用很大 dl的子元素只能是dt和dd-->
+<!--dt 列表的标题，这个标签必须有-->
+<!--dd 列表的列表项，可以不加 dd是描述dt的-->
+<dl>
+    <dt>第一条</dt>
+    <dd>你若是觉得你有实力和我玩，良辰不介意奉陪到底</dd>
+    <dd>我会让你明白，我从不说空话</dd>
+    <dd>我是本地的，我有一百种方式让你呆不下去；而你，无可奈何</dd>
+
+    <dt>第二条</dt>
+    <dd>良辰最喜欢对那些自认能力出众的人出手</dd>
+    <dd>你可以继续我行我素，不过，你的日子不会很舒心</dd>
+    <dd>你只要记住，我叫叶良辰</dd>
+    <dd>不介意陪你玩玩</dd>
+    <dd>良辰必有重谢</dd>
+</dl>
+<!--可以一个dt配很多个dd,dt和dd都是容器类标签，想放什么都可以-->
+<dl>
+    <dt>购物指南</dt>
+    <dd>购物流程</dd>
+    <dd>会员介绍</dd>
+    <dd>生活旅行</dd>
+    <dd>联系客服</dd>
+</dl>
+
+<!--表格:一个表格有行tr组成，而tr又由每个单元格td组成-->
+<!--2*4的表格-->
+<!--表格标题 caption标签，使用时和tr标签并列，align是标题相对于表格的位置，属性取值可以是left，centre，right，top，bottom-->>
+<table>
+    <caption align="center">标题</caption>
+    <tr>
+        <td>生命一号</td>
+        <td>23</td>
+        <td>男</td>
+        <td>黄冈</td>
+    </tr>
+
+    <tr>
+        <td>许嵩</td>
+        <td>29</td>
+        <td>男</td>
+        <td>安徽</td>
+    </tr>
+</table>
+
+</body>
+</html>

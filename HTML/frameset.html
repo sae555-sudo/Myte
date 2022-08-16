@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--内嵌框架-->
+<body>
+    哈哈<iframe src="list.html"></iframe>嘿嘿<br>
+    
+    <!--在同一个内嵌框架中显示不同的页面-->
+    <a href="list.html" target="myframe">点击进入文字页面</a><br>  <!--复习一下:target是指这个超链接在哪儿打开，默认是_blank-->
+    <a href="test(html1~6).html" target="myframe">点击进入另一个页面</a><br>
+    <iframe src="list.html" width="400" height="400" name="myframe"></iframe><br>
+
+    <!--表单标签:用于和服务器交互，收集用户信息-->
+    <!--...-->
+
+    <!--输入标签input-->
+    姓名:<input value="呵呵">逗比<br>
+    昵称:<input value="哈哈"><br>
+    名字:<input readonly value="name"><br>
+    密码:<input type="password" size="50"><br>
+    性别:<input name="sex" type="radio" type="checked">男<input type="radio" name="sex">女<br>
+    爱好:<input type="checkbox" name="hobby">吃饭<input type="checkbox" name="hobby">睡觉<input type="checkbox" name="hobby">打豆豆<br>
+    <!--多个单选框的input标签中，name属性值可以相同，但是id的属性值必须是唯一的-->
+
+    <!--下拉列表标签-->
+    <select>
+        <option>小学</option>
+        <option>初中</option>
+        <option>高中</option>
+        <option>大学</option>
+        <option selected="">研究生</option>
+    </select><br><br>
+
+    <select size="3">
+        <option>小学</option>
+        <option>初中</option>
+        <option>高中</option>
+        <option>大学</option>
+        <option selected="">研究生</option>
+    </select><br><br>
+
+    <select size="4" multiple="">
+        <option>小学</option>
+        <option>初中</option>
+        <option selected="">高中</option>
+        <option selected="">大学</option>
+        <option selected="">研究生</option>
+    </select><br><br>
+
+    <!--多行文本输入框textarea-->
+    <form>
+        <textarea name="txtInfo" row="4" cols="20">不爱摄影不懂设计的程序员不是一个好的产品经理</textarea>
+        <textarea name="txtInfo" row="4" cols="20">
+            不爱摄影不懂设计的程序员不是一个好的产品经理</textarea>
+        <textarea name="txtInfo" row="4" cols="20">
+                    
+            不爱摄影不懂设计的程序员不是一个好的产品经理</textarea>
+    </form>
+
+    <!--表单的语义化-->
+    <form>
+        <fieldset>
+            <legend>账号信息</legend>
+            姓名:<input value="呵呵">逗比<br>
+            昵称:<input value="哈哈"><br>
+            名字:<input readonly value="name"><br>
+            密码:<input type="password" size="50"><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>其他信息</legend>
+            性别:<input name="sex" type="radio" type="checked">男<input type="radio" name="sex">女<br>
+            爱好:<input type="checkbox" name="hobby">吃饭<input type="checkbox" name="hobby">睡觉<input type="checkbox" name="hobby">打豆豆<br>
+        </fieldset>
+    </form>
+
+    <!--label标签:可以将input和汉字包裹起来成为整理，label的for属性和input的id一样，任何表单元素都有label-->
+    <input name="sex" type="radio" id="male"><label for="male">男</label>
+    <input name="sex" type="radio" id="female"><label for="female">女</label><br>
+
+    <!--多媒体标签:音频、视频、Flash-->
+    <!--滚动字幕标签-->
+    <marquee direction="down" behavior="alternate" scrollamount="30" loop="-1" width="300" height="200" bgcolor="#8c5dc1">我来了</marquee>
+</body>
+
+</html>
