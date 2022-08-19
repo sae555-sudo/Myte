@@ -1,6 +1,3 @@
-# Definition for singly-linked list.
-from re import L, T
-from tkinter import N
 
 
 class ListNode(object):
