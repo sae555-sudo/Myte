@@ -1,0 +1,22 @@
+class Solution(object):
+    def removeElement(self, nums, val):
+        """
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        """
+        sum = 0
+        j = 0
+        for i in range(0,len(nums)):
+            if nums[i] != val:
+                sum += 1
+                nums[j] = nums[i]
+                j += 1
+        return sum,nums
+
+nums = [3,2,2,3]
+val = 3
+s = Solution()
+sum,nums = s.removeElement(nums, val)
+print(sum)
+print(nums)
