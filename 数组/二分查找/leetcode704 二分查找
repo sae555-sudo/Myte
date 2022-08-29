@@ -29,3 +29,24 @@ nums = [-1,0,3,5,9,12]
 target = 9
 s = Solution()
 print(s.search(nums,target))
+
+"""
+class Solution(object):
+    def search(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        left = 0
+        right = len(nums) - 1
+        while left <= right:
+            mid = int((left + right) / 2)
+            if nums[mid] < target:
+                left = mid + 1
+            elif nums[mid] > target:
+                right = mid - 1
+            else:  #查找到了
+                return mid     
+        return -1
+"""
