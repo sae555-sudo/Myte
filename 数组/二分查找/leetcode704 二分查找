@@ -1,1 +1,31 @@
 
+"""
+超出时间限制:
+刚开始时条件 while left !=right and nums[mid] != target
+这种情况下当有left > right时 nums = [2,5] target = 0  第二次循环i = 0, j=-1，这种情况下索引超出限制
+"""
+class Solution(object):
+    def search(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        left = 0
+        right = len(nums) - 1
+        mid = int((left + right) / 2)
+        while left <= right and nums[mid] != target:
+            if nums[mid] < target:
+                left = mid + 1
+            elif nums[mid] > target:
+                right = mid - 1
+            mid = int((left + right) / 2)
+        if nums[mid] == target:
+            return mid
+        else:
+            return -1
+
+nums = [-1,0,3,5,9,12]
+target = 9
+s = Solution()
+print(s.search(nums,target))
