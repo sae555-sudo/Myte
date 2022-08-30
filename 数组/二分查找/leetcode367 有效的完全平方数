@@ -1,0 +1,27 @@
+#首先注意题目，针对是正整数，除了1之外其他所有数的平方根都不是它自身
+#其实就是找到[1,x)区间中，第一个mid*mid大于数的边界，判断左边的那个数的平方是不是等于target
+class Solution(object):
+    def isPerfectSquare(self, num):
+        """
+        :type num: int
+        :rtype: bool
+        """
+        if num == 1:
+            return True
+        left = 1
+        right = num - 1
+        rightBorder = 0
+        while left <= right:
+            mid =(left+right) // 2
+            if mid * mid >num:
+                right = mid - 1
+            else:
+                left = mid + 1
+                rightBorder = left
+        if (rightBorder-1)*(rightBorder-1) == num:
+            return True
+        else:
+            return False
+num = 16
+s = Solution()
+print(s.isPerfectSquare(num))
