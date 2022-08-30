@@ -1,0 +1,24 @@
+#其实就是在区间[1,x)中进行二分查找，找到第一个t*t大于x的值
+class Solution(object):
+    def mySqrt(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        if x == 1 or x == 0:  #算术平方根是它本身的那些数
+            return x
+        #其他的肯定比x小，找到第一个比x大的
+        left = 1
+        right = x - 1
+        rightBorder = 0
+        while left<=right:
+            mid = (right+left) // 2
+            if mid*mid > x:
+                right = mid - 1
+            else:
+                left = mid + 1
+                rightBorder = left
+        return rightBorder - 1
+x = 2
+s = Solution()
+print(s.mySqrt(x))
