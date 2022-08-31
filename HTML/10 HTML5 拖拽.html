@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        拖拽网站里的图片和超链接
+        给元素增加属性 draggable="true"
+    -->
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+
+        .one{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            background-color: green;
+        }
+        .two{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            left: 300px;
+            top: 100px;
+            border: 1px solid #000;
+            background-color: red;
+        }
+
+        .circle {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+        }
+        .circle > div, .square > div {
+            width: 98px;
+            height: 98px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            background-color: red;
+            float: left;
+            text-align: center;
+            line-height: 98px;
+        }
+        .square {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            position: absolute;
+            left: 600px;
+            top: 200px;
+        }
+
+    </style>
+    
+
+</head>
+<body>
+    <!--给box1增加拖拽的属性-->
+    <div class="box1" draggable="true"></div>
+
+    <!--
+        拖拽元素的事件监听
+        ondragstart:当拖拽开始时调用
+        ondragleave:当鼠标离开拖拽元素时调用
+        ondragend:当拖拽结束时调用
+        ondrag:整个拖拽过程都会调用
+    -->
+    <script>
+        var box = document.querySelector('.box1')
+        //绑定拖拽事件
+        //拖拽开始
+        box.ondragstart = function(){
+            console.log('拖拽开始.');
+        }
+        //拖拽离开
+        box.ondragleave = function(){
+            console.log('拖拽离开.');
+        }
+
+        box.ondragend = function(){
+            console.log('拖拽结束..');
+        }
+        box.ondrag = function(){
+            console.log('拖拽');
+        }
+    </script>
+
+    <!--
+        目标元素：想把A拖拽进B，元素B就是目标元素。任何一个元素都可以成为目标元素
+        事件监督:
+        ondragenter: 拖拽元素进入时调用
+        ondragover: 拖拽元素停留在目标元素上时，连续触发
+        ondrop:在目标元素上松开鼠标时调用
+        ondragleave: 当鼠标离开目标元素时调用
+    -->
+    <div class="one" draggable="true"></div>
+    <div class="two"></div>  <!--目标元素-->
+    <script>
+        var two = document.querySelector('.two');
+
+        two.ondragenter = function(){  //进入目标元素
+            console.log("来了");
+        }
+        two.ondragleave = function(){  //拖拽元素离开
+            console.log("走了..");
+        }
+        two.ondragover = function(e){  //拖拽元素在目标元素时，连续触发
+            e.preventDefault(); //组织拖拽事件的默认行为？？？
+            console.log("over..");
+        }
+        two.ondrop = function(){  //目标元素上松开鼠标
+            console.log("松开鼠标了...");
+        }
+    </script>
+    <!--如果想让拖拽元素在目标元素里做些事，必须在ondragover里加上e.preventDefault()-->
+</body>
+</html>
